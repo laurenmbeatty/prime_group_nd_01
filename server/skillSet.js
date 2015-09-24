@@ -1,6 +1,6 @@
 var skillSet = function() {
     var skill = "";
-    var skillNum = Math.floor(Math.random() * (3-1) + 1);
+    var skillNum = Math.floor(Math.random() * (4-1) + 1);
     if(skillNum ===1) {
         skill = "Front End";
     }else if(skillNum ===2){
