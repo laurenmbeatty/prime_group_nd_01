@@ -1,0 +1,63 @@
+.generate {
+    background-color: cadetblue;
+    border: 2px solid cadetblue;
+    border-radius: 5px;
+    color: white;
+    letter-spacing: 1px;
+    font-weight: lighter;
+}
+
+#sprints{
+    font-family: monospace;
+    font-size: 26px;
+    margin-top: 20px;
+    color:#2B3535;
+}
+
+h1{
+    color:#2B3535;
+    font-size: 65px;
+    font-family: "Trebechen MS";
+    font-weight: bold;
+    text-align:center;
+}
+
+.assign {
+    background-color: cadetblue;
+    border: 2px solid cadetblue;
+    border-radius: 5px;
+    color: white;
+    letter-spacing: 1px;
+    font-weight: lighter;
+    margin-left: 35px;
+}
+.jumbotron h1{
+     color:#2B3535;
+     font-size: 87px;
+     font-family: "Trebechen MS";
+     font-weight: bold;
+    letter-spacing: 1px;
+ }
+
+.jumbotron{
+    text-align: center;
+    height: 300px;
+}
+
+p{
+    font-family: monospace;
+    font-size: 26px;
+    color:#2B3535;
+
+}
+
+.workers-bees{
+    font-family: monospace;
+    font-size: 26px;
+    text-align: center;
+    color:cadetblue;
+}
+
+td {
+    text-align: left;
+}

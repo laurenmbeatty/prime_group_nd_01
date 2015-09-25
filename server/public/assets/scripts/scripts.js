@@ -24,12 +24,13 @@ $(document).ready(function () {
         $('main').children().remove();
         $('#assign').remove();
         $('#sprints').remove();
+        $('.workers-bees').remove();
         $('main').append('<h1>' + randomCompanyName() + '</h1>');
         randomPts();
         $('main').append('<p class = "col-md-4">' + "Front End Points: " + fe + '</p>');
         $('main').append('<p class = "col-md-4">' + "Client Side Points: " + cs + '</p>');
         $('main').append('<p class = "col-md-4">' + "Server Side Points: " + ss + '</p>');
-        $('.jumbotron').append('<button type="button" class="btn btn-lg btn-success" id="assign">Assign Staff</button>');
+        $('.jumbotron').append('<button type="button" class="assign"class="btn btn-lg btn-success" id="assign">Assign Staff</button>');
     });
 
     $(document).on('click', '#assign', function() {goFetch();});
@@ -42,7 +43,8 @@ $(document).ready(function () {
             url: 'http://127.0.0.1:3000/createemployee'
         }).done(function (response) {
             var worker = response;
-            $('main').append('<p>' + worker[0] + " " + worker[1] + " " + worker[2] + '</p>');
+            $('#workers').append('<tr><td class="workers-bees">' + worker[0] + '</td><td class="workers-bees">'
+                + worker[1] + '</td><td class="workers-bees">' + worker[2] + '</td></tr>');
             if (worker[1] == "Front End") {
                 feAssigned = true;
                 feScrums += worker[2];
@@ -65,12 +67,10 @@ $(document).ready(function () {
             if (feSprints > csSprints && feSprints > ssSprints) {
                 $('#sprints').remove();
                 $('.jumbotron').append('<div id="sprints">Sprints Required: ' + feSprints + '</div>');
-            };
-            if (csSprints > feSprints && csSprints > ssSprints) {
+            } else if(csSprints > feSprints && csSprints > ssSprints) {
                 $('#sprints').remove();
                 $('.jumbotron').append('<div id="sprints">Sprints Required: ' + csSprints + '</div>');
-            };
-            if (ssSprints > feSprints && ssSprints < csSprints) {
+            } else if(ssSprints > feSprints && ssSprints > csSprints) {
                 $('#sprints').remove();
                 $('.jumbotron').append('<div id="sprints">Sprints Required: ' + ssSprints + '</div>');
             };
